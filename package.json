@@ -17,7 +17,7 @@
     "lint": "prettier -c ./src/ && prettier -c ./test/",
     "lint:fix": "prettier --write ./src && prettier --write ./test/"
   },
-  "repository": "git@github.com:metaplex-foundation/tplex.git",
+  "repository": "git@github.com:trezoaplex-foundation/tplex.git",
   "author": "Thorsten Lorenz <thlorenz@gmx.de>",
   "license": "Apache-2.0",
   "private": false,
