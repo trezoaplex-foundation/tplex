@@ -1,4 +1,4 @@
-import { Commitment, Connection } from '@solana/web3.js'
+import { Commitment, Connection } from '@trezoa/web3.js'
 import { urlFromCluster } from '@/utils/connection'
 import { logInfo } from '@/utils'
 import { airdrop } from '@/actions/airdrop'
@@ -14,7 +14,7 @@ export async function cmdAirdrop(
   const pubkey = asPublicKey(pubkeyStr)
   const url = urlFromCluster(cluster)
   const shortCluster = pubkeyStr.slice(0, 10)
-  logInfo(`Dropping ${amount}SOL to ${shortCluster}... on ${cluster} (${url})`)
+  logInfo(`Dropping ${amount}TRZ to ${shortCluster}... on ${cluster} (${url})`)
 
   const connection = new Connection(url, commitment)
 

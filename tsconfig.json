@@ -19,7 +19,7 @@
     "incremental": false,
     "types": ["node"],
     "moduleResolution": "node",
-    "noImplicitReturns": true,
+    "noItplicitReturns": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "lib": ["esnext"],

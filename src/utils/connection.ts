@@ -1,4 +1,4 @@
-import { clusterApiUrl, Connection } from '@solana/web3.js'
+import { clusterApiUrl, Connection } from '@trezoa/web3.js'
 import { ClusterWithLocal } from '@/types'
 const LOCALHOST = 'http://127.0.0.1:8899'
 

@@ -13,14 +13,14 @@ class MplexArgs {
   constructor(private readonly _args: Argv) {}
 
   cluster(
-    describe = 'The cluster on which to perform the transaction. Defaults to MPLEX_CLUSTER or "devnet".'
+    describe = 'The cluster on which to perform the transaction. Defaults to TPLEX_CLUSTER or "devnet".'
   ) {
     this._args.option('cluster', {
       alias: 'c',
       describe,
       type: 'string',
       choices: devClusters,
-      default: process.env.MPLEX_CLUSTER ?? 'devnet',
+      default: process.env.TPLEX_CLUSTER ?? 'devnet',
     })
     return this
   }
@@ -111,7 +111,7 @@ class MplexArgsChecked {
   }
 }
 
-export function mplex(args: Argv) {
+export function tplex(args: Argv) {
   return new MplexArgs(args)
 }
 

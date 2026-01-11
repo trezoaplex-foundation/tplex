@@ -1,14 +1,14 @@
-import { Amman } from '@metaplex-foundation/amman-client'
+import { Amman } from '@trezoaplex-foundation/amman-client'
 import { ClusterWithLocal } from '@/types'
 import { logDebug } from './log'
-import { ConfirmOptions } from '@solana/web3.js'
+import { ConfirmOptions } from '@trezoa/web3.js'
 
 const programIds = {
   hausS13jsjafwWwGqZTUQRmWyvyxn9EQpqMwV1PBBmk: 'auctionHouse',
   CnDYGRdU51FsSyLnVgSd19MCFxA4YHT5h3nacvCKMPUJ: 'candyGuard',
   CndyV3LdqHUfDLmE5naZjVN8rBZz4tqhdefbAnjHG3JR: 'candyMachineCore',
   metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s: 'tokenMetadata',
-  gatem74V238djXdzWnJf94Wo1DcnuGkfijbf3AuBhfs: 'solanaGateway',
+  gatem74V238djXdzWnJf94Wo1DcnuGkfijbf3AuBhfs: 'trezoaGateway',
 }
 
 export class MplexAmman {
@@ -18,19 +18,19 @@ export class MplexAmman {
   }
 
   private constructor(cluster: ClusterWithLocal) {
-    // At this point we require the MPLEX_AMMAN env var to be set, but we could
+    // At this point we require the TPLEX_AMMAN env var to be set, but we could
     // also try to connect to amman relay and enable it magically.
-    // Alternatively we could provide a wrapper binary which calls `mplex` with
+    // Alternatively we could provide a wrapper binary which calls `tplex` with
     // that env var set.
     if (cluster === 'local') {
-      if (process.env.MPLEX_AMMAN != null) {
+      if (process.env.TPLEX_AMMAN != null) {
         this._amman = Amman.instance({
           knownLabels: programIds,
         })
         logDebug('Enabled amman integration')
       } else {
         logDebug(
-          `Set env var 'MPLEX_AMMAN=1' in order to enable amman integration when running on local cluster`
+          `Set env var 'TPLEX_AMMAN=1' in order to enable amman integration when running on local cluster`
         )
       }
     }

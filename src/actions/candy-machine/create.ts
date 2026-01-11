@@ -1,15 +1,15 @@
 import {
   CreateCandyMachineInput,
-  Metaplex,
+  Trezoaplex,
   NftWithToken,
-} from '@metaplex-foundation/js'
+} from '@trezoaplex-foundation/js'
 import { CandyMachineCreateArgs } from '@/types'
 import { strict as assert } from 'assert'
 import { tryAmman } from '@/utils/amman'
-import { ConfirmOptions } from '@solana/web3.js'
+import { ConfirmOptions } from '@trezoa/web3.js'
 
 export async function candyMachineCreate(
-  mx: Metaplex,
+  mx: Trezoaplex,
   args: CandyMachineCreateArgs
 ) {
   const nft =
@@ -46,9 +46,9 @@ export async function candyMachineCreate(
 }
 
 // TODO(thlorenz): This is a stop gap ... we need to have the user create a collection first via
-// mplex nft create ... and then provide us the address
+// tplex nft create ... and then provide us the address
 async function createCollection(
-  mx: Metaplex,
+  mx: Trezoaplex,
   collectionName: string,
   uri: string,
   sellerFeeBasisPoints: number,

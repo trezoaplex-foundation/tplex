@@ -1,8 +1,8 @@
-import { keypairIdentity, MetaplexPlugin } from '@metaplex-foundation/js'
-import { Keypair } from '@solana/web3.js'
+import { keypairIdentity, TrezoaplexPlugin } from '@trezoaplex-foundation/js'
+import { Keypair } from '@trezoa/web3.js'
 import { strict as assert } from 'assert'
 
-export function resolveIdentity(keypair?: Keypair): MetaplexPlugin {
+export function resolveIdentity(keypair?: Keypair): TrezoaplexPlugin {
   if (keypair != null) return keypairIdentity(keypair)
 
   // TODO(thlorenz): when no keypair is provided return a cartera identity plugin

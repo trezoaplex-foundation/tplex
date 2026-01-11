@@ -1,10 +1,10 @@
 import debug from 'debug'
 
-const logErrorDebug = debug('mplex:error')
-const logInfoDebug = debug('mplex:info')
+const logErrorDebug = debug('tplex:error')
+const logInfoDebug = debug('tplex:info')
 
-export const logDebug = debug('mplex:debug')
-export const logTrace = debug('mplex:trace')
+export const logDebug = debug('tplex:debug')
+export const logTrace = debug('tplex:trace')
 
 export const logError = logErrorDebug.enabled
   ? logErrorDebug

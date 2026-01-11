@@ -1,18 +1,18 @@
-import { PublicKey } from '@solana/web3.js'
+import { PublicKey } from '@trezoa/web3.js'
 import { strict as assert } from 'assert'
 
 /**
- * Checks if a string is valid base58 Solana via a Regex.
+ * Checks if a string is valid base58 Trezoa via a Regex.
  * @private
  */
-export function isValidSolanaAddress(address: string) {
+export function isValidTrezoaAddress(address: string) {
   return /^[0-9a-zA-Z]{43,88}$/.test(address)
 }
 
-export function assertValidSolanaAddress(address: string) {
+export function assertValidTrezoaAddress(address: string) {
   assert(
-    isValidSolanaAddress(address) && address.length >= 44,
-    `'${address}' is not a valid solana account or transaction address`
+    isValidTrezoaAddress(address) && address.length >= 44,
+    `'${address}' is not a valid trezoa account or transaction address`
   )
 }
 
@@ -21,7 +21,7 @@ export function assertValidSolanaAddress(address: string) {
  * @private
  */
 export function isValidPublicKeyAddress(address: string) {
-  if (!isValidSolanaAddress(address) || address.length > 44) return false
+  if (!isValidTrezoaAddress(address) || address.length > 44) return false
   try {
     new PublicKey(address)
     return true
@@ -31,6 +31,6 @@ export function isValidPublicKeyAddress(address: string) {
 }
 
 export function asPublicKey(address: string): PublicKey {
-  assertValidSolanaAddress(address)
+  assertValidTrezoaAddress(address)
   return new PublicKey(address)
 }

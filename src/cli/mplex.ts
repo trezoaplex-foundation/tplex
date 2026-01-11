@@ -5,8 +5,8 @@ import { strict as assert } from 'assert'
 import { cmdAirdrop } from '@/commands/airdrop'
 import { closeConnection } from '@/utils/connection'
 import { logError } from '@/utils'
-import { BigNumber } from '@metaplex-foundation/js'
-import { checked, mplex } from './flags'
+import { BigNumber } from '@trezoaplex-foundation/js'
+import { checked, tplex } from './flags'
 import { cmdCandyMachineCreate } from '@/commands/candy-machine'
 import { resolveIdentity } from '@/utils/identity'
 import { tweakConfirmOptions } from '@/utils/amman'
@@ -19,16 +19,16 @@ const commands = yargs(hideBin(process.argv))
     'airdrop',
     `Drops the amount of sols to the provided address (only works for ${devClusters} clusters)`,
     (args) => {
-      mplex(args)
+      tplex(args)
         .cluster()
         .commitment()
         .positional('pubkey', {
-          describe: 'The pubkey to which we want to drop the SOL.',
+          describe: 'The pubkey to which we want to drop the TRZ.',
           type: 'string',
           demandOption: true,
         })
         .positional('amount', {
-          describe: 'Amount of SOL to drop.',
+          describe: 'Amount of TRZ to drop.',
           type: 'string',
           default: 1,
         })
@@ -40,7 +40,7 @@ const commands = yargs(hideBin(process.argv))
   .command('cm', 'Creates and interacts with candy machines', (args) => {
     args
       .command('create', 'Create a new Candy Machine', (args) => {
-        mplex(args).cluster().commitment().keypair().items().points()
+        tplex(args).cluster().commitment().keypair().items().points()
       })
       .command('update', 'Update an existing Candy Machine', (_args) => {})
       .command(

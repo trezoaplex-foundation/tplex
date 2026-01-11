@@ -1,4 +1,4 @@
-import { Connection, LAMPORTS_PER_SOL, PublicKey } from '@solana/web3.js'
+import { Connection, LAMPORTS_PER_TRZ, PublicKey } from '@trezoa/web3.js'
 import { tryAmman } from '@/utils/amman'
 
 export async function airdrop(
@@ -19,7 +19,7 @@ export async function airdrop(
   } else {
     signature = await connection.requestAirdrop(
       publicKey,
-      amount * LAMPORTS_PER_SOL
+      amount * LAMPORTS_PER_TRZ
     )
     signatureResult = await connection.confirmTransaction(signature)
   }

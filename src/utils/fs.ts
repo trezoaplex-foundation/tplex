@@ -1,4 +1,4 @@
-import { Keypair } from '@solana/web3.js'
+import { Keypair } from '@trezoa/web3.js'
 import { R_OK } from 'constants'
 import { promises as pfs } from 'fs'
 import * as fs from 'fs'

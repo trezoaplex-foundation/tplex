@@ -1,10 +1,10 @@
-import { Cluster, Commitment } from '@solana/web3.js'
+import { Cluster, Commitment } from '@trezoa/web3.js'
 import { strict as assert } from 'assert'
 import {
   CreateCandyMachineInput,
   DefaultCandyGuardSettings,
   Cluster as SdkCluster,
-} from '@metaplex-foundation/js'
+} from '@trezoaplex-foundation/js'
 
 // -----------------
 // Clusters
